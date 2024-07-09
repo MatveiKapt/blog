@@ -1,23 +1,22 @@
 import './styles/index.scss'
-import { Link } from 'react-router-dom';
 import { useTheme } from 'app/providers/ThemeProvider/index';
 import { classNames } from 'shared/lib';
 import { AppRouter } from './providers/router';
-
-export enum Theme {
-  LIGHT = 'light',
-  DARK = 'dark',
-}
+import { Navbar } from 'widgets/Navbar';
+import { Sidebar } from 'widgets/Sidebar';
 
 const App = () => {
-  const {theme, toggleTheme} = useTheme();
+  const { theme } = useTheme();
 
   return (
     <div className={classNames('app', {}, [theme])}>
-      <button onClick={toggleTheme}>TOGGLE</button>
-      <Link to={'/'}>Главная</Link>
-      <Link to={'/about'}>О сайте</Link> 
-      <AppRouter />
+      <Navbar />
+
+      <div className='content-page'>
+        <Sidebar />
+        <AppRouter />
+      </div>
+      
     </div>
   )
 };
