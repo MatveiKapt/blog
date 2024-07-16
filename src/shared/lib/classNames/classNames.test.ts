@@ -1,4 +1,4 @@
-import { classNames } from './classNames';
+import { classNames } from 'shared/lib/classNames/classNames';
 
 describe('classNames', () => {
     test('with only first param', () => {
@@ -16,8 +16,8 @@ describe('classNames', () => {
 
         expect(classNames(
             'someClass',
-            {hovered: true, scrollable: true}, 
-            ['class1', 'class2']
+            { hovered: true, scrollable: true },
+            ['class1', 'class2'],
         )).toBe(expected);
     });
 
@@ -26,8 +26,8 @@ describe('classNames', () => {
 
         expect(classNames(
             'someClass',
-            {hovered: true, scrollable: false}, 
-            ['class1', 'class2']
+            { hovered: true, scrollable: false },
+            ['class1', 'class2'],
         )).toBe(expected);
     });
 
@@ -36,8 +36,8 @@ describe('classNames', () => {
 
         expect(classNames(
             'someClass',
-            {hovered: true, scrollable: undefined}, 
-            ['class1', 'class2']
+            { hovered: true, scrollable: undefined },
+            ['class1', 'class2'],
         )).toBe(expected);
     });
 });
