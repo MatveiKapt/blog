@@ -3,6 +3,7 @@ import path from 'path';
 import { BuildPaths } from '../build/types/config';
 import { buildCssLoader } from '../build/loaders/buildCssLoader';
 
+// eslint-disable-next-line no-explicit-any
 export default ({ config }: { config: any }): { config: webpack.Configuration } => {
     const paths: BuildPaths = {
         build: '',
