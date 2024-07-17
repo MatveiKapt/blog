@@ -1,9 +1,9 @@
-/* eslint-disable i18next/no-literal-string */
 import { classNames } from 'shared/lib';
 import { useState } from 'react';
 import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import { LangSwitcher } from 'widgets/LangSwitcher';
 import { Button } from 'shared/ui/Button/Button';
+import { useTranslation } from 'react-i18next';
 import cls from './Sidebar.module.scss';
 
 interface SidebarProps {
@@ -12,6 +12,8 @@ interface SidebarProps {
 
 export function Sidebar({ className }: SidebarProps) {
     const [collapsed, setCollapsed] = useState(false);
+
+    const { t } = useTranslation();
 
     const onToggle = () => {
         setCollapsed((prev) => !prev);
@@ -24,7 +26,9 @@ export function Sidebar({ className }: SidebarProps) {
                 classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [className])
             }
         >
-            <Button type="button" data-testid="sidebar-toggle" onClick={onToggle}>toggle</Button>
+            <Button type="button" data-testid="sidebar-toggle" onClick={onToggle}>
+                { t('Переключить') }
+            </Button>
 
             <div className={cls.switchers}>
                 <ThemeSwitcher />
