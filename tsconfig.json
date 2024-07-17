@@ -20,9 +20,10 @@
     }
   },
   "include": [
-    "./config/jest/setupTests.tsx",
+    "./config/**/*.ts",
+    "./config/**/*.tsx",
     "./src/**/*.ts",
-    "./src/**/*.tsx", 
-    "src/shared/config/storybook/StyleDecorator/StyleDecorator.tsx"
+    "./src/**/*.tsx",
+    "./*.config.ts"
   ]
 }

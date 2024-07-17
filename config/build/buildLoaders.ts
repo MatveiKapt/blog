@@ -40,8 +40,6 @@ export function buildLoaders({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoaders = buildCssLoader(isDev);
 
-
-
     const typescriptLoader = {
         test: /\.tsx?/,
         use: 'ts-loader',

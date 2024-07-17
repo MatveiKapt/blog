@@ -29,7 +29,7 @@ export function buildPlugins(options: BuildOptions): webpack.WebpackPluginInstan
         plugins.push(new BundleAnalyzerPlugin({
             openAnalyzer: false,
         }));
-    };
+    }
 
     return plugins;
 }
