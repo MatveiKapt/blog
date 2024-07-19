@@ -4,8 +4,20 @@ module.exports = {
     es2021: true,
     jest: true
   },
-  extends: ['airbnb', 'airbnb-typescript', 'plugin:react/jsx-runtime', 'plugin:@typescript-eslint/recommended', 'plugin:i18next/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended', 'plugin:storybook/recommended'],
-  plugins: ['i18next'],
+  extends: [
+    'airbnb', 
+    'airbnb-typescript', 
+    'plugin:react/jsx-runtime', 
+    'plugin:@typescript-eslint/recommended', 
+    'plugin:i18next/recommended', 
+    'plugin:storybook/recommended', 
+    'plugin:storybook/recommended', 
+    'plugin:storybook/recommended'
+  ],
+  plugins: [
+    'i18next', 
+    'react-hooks'
+  ],
   overrides: [{
     env: {
       node: true
@@ -43,7 +55,11 @@ module.exports = {
     'max-len': [2, {
       ignoreComments: true,
       code: 100
-    }]
+    }],
+    'jsx-a11y/click-events-have-key-events': [0],
+    'jsx-a11y/no-static-element-interactions': [0],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "error"
   },
   globals: {
     __IS_DEV__: true
